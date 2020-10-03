@@ -28,9 +28,9 @@ exports.createCar = async (req, res) => {
 };
 
 exports.findCarByPlaque = async (req, res) => {
-  const { plaque } = req.params;
+  const { plaque } = req.query;
 
-  console.log('PARAMS -> ', req.params);
+  console.log('PARAMS -> ', req.query);
   console.log('PLAQUE -> ', plaque);
 
   const firestore = new Firestore({
