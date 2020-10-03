@@ -5,4 +5,4 @@
 
 | POST | https://us-central1-lucasbrunoferreira.cloudfunctions.net/create-car | body:{plaque: string, color: string, price: string, carModel: string, brand: string } |
 |--|--| -- |
-| GET | https://us-central1-lucasbrunoferreira.cloudfunctions.net/get-car?plaque="exemplo" | query: { plaque: string }  |
+| GET | https://us-central1-lucasbrunoferreira.cloudfunctions.net/get-car | query: { plaque: string }  |
