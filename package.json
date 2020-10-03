@@ -1,0 +1,7 @@
+{
+  "name": "car-function",
+  "version": "0.0.1",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.4.0"
+  }
+}
