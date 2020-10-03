@@ -37,11 +37,11 @@ exports.findCarByPlaque = async (req, res) => {
 
   const carsRef = firestore.collection('americanCar');
 
-  const car = await carsRef.where('plaque', '==', plaque).get();
+  const snapshot = await carsRef.where('plaque', '==', plaque).get();
 
-  if (car.empty) {
+  if (snapshot.empty) {
     return res.status(404).send('No car found for this plaque!');
   }
 
-  res.status(200).send(car.data());
+  res.status(200).send(snapshot[0].data());
 };
