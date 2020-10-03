@@ -26,3 +26,29 @@ exports.createCar = async (req, res) => {
 
   res.status(200).send('Car created!');
 };
+
+exports.findCarByPlaque = async (req, res) => {
+  const { plaque } = req.params;
+
+  console.log('PARAMS -> ', req.params);
+  console.log('PLAQUE -> ', plaque);
+
+  const firestore = new Firestore({
+    projectId: 'PROJECT_ID',
+    keyFilename: './keyfile.json',
+  });
+
+  const carsRef = firestore.collection('americanCar');
+
+  const car = await carsRef.where('plaque', '==', plaque).get();
+
+  if (car.empty) {
+    console.log('No car found for this plaque!');
+
+    return;
+  }
+
+  console.log('CAR -> ', car);
+
+  res.status(200).send(car);
+};
