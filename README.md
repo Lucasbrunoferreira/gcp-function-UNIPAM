@@ -12,12 +12,12 @@
 
 ## Create Car - Screenshots
 
-<img src="./.github/create-car.png?raw=true" width="500"/>
-<img src="./.github/firestore.png?raw=true" width="500"/>
+<img src="./.github/create-car.png?raw=true" width="650"/>
+<img src="./.github/firestore.png?raw=true" width="650"/>
 
 
 ## Get Car - Screenshots
-
+<img src="./.github/get-car.png?raw=true" width="650"/>
 
 # Group
 - Lucas Bruno Ferreira https://github.com/lucasbrunoferreira

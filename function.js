@@ -14,7 +14,7 @@ exports.createCar = async (req, res) => {
     keyFilename: './keyfile.json',
   });
 
-  const docRef = firestore.collection('americanCar').doc('car');
+  const docRef = firestore.collection('americanCar').doc(plaque);
 
   await docRef.set({
     plaque,
@@ -37,11 +37,14 @@ exports.findCarByPlaque = async (req, res) => {
 
   const carsRef = firestore.collection('americanCar');
 
-  const snapshot = await carsRef.where('plaque', '==', plaque).get();
+  const query = await carsRef.where('plaque', '==', plaque).get();
 
-  if (snapshot.empty) {
+  if (query.empty) {
     return res.status(404).send('No car found for this plaque!');
   }
 
-  res.status(200).send(snapshot[0].data());
+  const snapshot = query.docs[0];
+  const data = snapshot.data();
+
+  res.status(200).send(data);
 };
