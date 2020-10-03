@@ -8,19 +8,19 @@ import (
 )
 
 func CreateCars(w http.ResponseWriter, r *http.Request) {
-  var d struct {
-		Message string `json:"message"`
+
+  var car struct {
+    Plaque string `json:"plaque"`
+    Color string `json:"color"`
+    Price string `json:"price"`
+    CarModel string `json:"carModel"`
+    Brand string `json:"brand"`
   }
 
-	if err := json.NewDecoder(r.Body).Decode(&d); err != nil {
-		fmt.Fprint(w, "Hello World!")
+	if err := json.NewDecoder(r.Body).Decode(&car); err != nil {
+		fmt.Fprint(w, "Body inválido!")
 		return
   }
 
-	if d.Message == "" {
-		fmt.Fprint(w, "Hello World!")
-		return
-  }
-
-	fmt.Fprint(w, html.EscapeString(d.Message))
+	fmt.Fprint(w, html.EscapeString(car.Plaque))
 }
