@@ -45,10 +45,10 @@ exports.findCarByPlaque = async (req, res) => {
   if (car.empty) {
     console.log('No car found for this plaque!');
 
-    return;
+    return res.status(404).send('No car found for this plaque!');
   }
 
-  console.log('CAR -> ', car);
+  console.log('CAR -> ', car.data());
 
-  res.status(200).send(car);
+  res.status(200).send(car.data());
 };
