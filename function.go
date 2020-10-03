@@ -22,5 +22,5 @@ func CreateCars(w http.ResponseWriter, r *http.Request) {
 		return
   }
 
-	fmt.Fprint(w, html.EscapeString(car.Plaque))
+	fmt.Fprint(w, html.EscapeString({car.Plaque, car.Color, car.Price, car.CarModel, car.Brand}))
 }
