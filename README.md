@@ -10,7 +10,15 @@
 | GET | https://us-central1-lucasbrunoferreira.cloudfunctions.net/get-car | query: { plaque: string }  |
 
 
-# Screenshors
+## Create Car - Screenshots
 
 <img src="./.github/create-car.png?raw=true" width="500"/>
 <img src="./.github/firestore.png?raw=true" width="500"/>
+
+
+## Get Car - Screenshots
+
+
+# Group
+- Lucas Bruno Ferreira https://github.com/lucasbrunoferreira
+- Kevem Pedro - https://github.com/kevempedro
